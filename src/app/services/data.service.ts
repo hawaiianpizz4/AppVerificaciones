@@ -33,15 +33,15 @@ export class dataService {
     );
   }
 
-  sendRequestVerifi(cedula:number) {
+  sendRequestVerifi(cedula:number, nombreGestor: string) {
     return this._http.get<any>(
-      `http://200.7.249.21:90/ApiVerificaciones/api/verificaciones?consult=UpdateUser&cedula=${cedula}`
+      `http://200.7.249.21:90/ApiVerificaciones/api/verificaciones?consult=UpdateUser&cedula=${cedula}&nombreGestor=${nombreGestor}`
     );
   }
 
-  getUsersVerifi2() {
+  getUsersVerifi2(nombreGestor: string) {
     return this._http.get<any>(
-      `http://200.7.249.21:90/ApiVerificaciones/api/verificaciones?consult=VerificationforUser&nombreGestor=MRAMIREZ`
+      `http://200.7.249.21:90/ApiVerificaciones/api/verificaciones?consult=VerificationforUser&nombreGestor=${nombreGestor}`
     )
   }
 }

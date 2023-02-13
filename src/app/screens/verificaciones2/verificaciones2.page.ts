@@ -15,7 +15,7 @@ export class Verificaciones2Page implements OnInit {
     private toastController: ToastController,) { }
 
   ngOnInit() {
-    this._service.getUsersVerifi2().subscribe((data) => {
+    this._service.getUsersVerifi2(JSON.parse(localStorage.getItem("user"))).subscribe((data) => {
       this.dataList2=data;
       console.log(this.dataList2);
     });

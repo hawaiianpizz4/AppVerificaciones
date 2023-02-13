@@ -33,7 +33,7 @@ export class VerificacionesPage implements OnInit {
 
   sendRequestVerifi(user){
     console.log(user.vf_cedula_cliente);
-    this._service.sendRequestVerifi(user.vf_cedula_cliente).subscribe((data)=>{
+    this._service.sendRequestVerifi(user.vf_cedula_cliente, JSON.parse(localStorage.getItem("user"))).subscribe((data)=>{
       console.log(data);
     });
     this.showLoading('Reservando verificacion...').then((e) => {});
